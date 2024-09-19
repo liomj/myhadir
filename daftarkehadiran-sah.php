@@ -156,7 +156,7 @@ echo "</div>";
 
 
 
-	$resultpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." where idprogram = '$idprogram'" );
+	$resultpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." where idprogram = '$idprogram'" );
     $jumlahpeserta = $GLOBALS['xoopsDB']->getRowsNum($resultpeserta);
 $curdate=date("Y-m-d");
                                     if($tarikhmula < $curdate OR $jumlahpeserta > $kuotapeserta)
@@ -179,11 +179,11 @@ $curdate=date("Y-m-d");
         
         
         if($mykad != 0){
-        $id=$GLOBALS['xoopsDB']->escape($_POST['id']);
+        $idkehadiran=$GLOBALS['xoopsDB']->escape($_POST['id']);
         $mykad=$GLOBALS['xoopsDB']->escape($_POST['mykad']);
         
         //echo 
-        $query="SELECT * from ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE mykad = '$mykad' and idprogram = '$idprogram' " ;
+        $query="SELECT * from ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE mykad = '$mykad' and idprogram = '$idprogram' " ;
 	//echo $query;
 	$result=$GLOBALS['xoopsDB']->query($query);
 	$size = $GLOBALS['xoopsDB']->getRowsNum($result);
@@ -214,7 +214,7 @@ $curdate=date("Y-m-d");
 					$cpdpoint=$row['cpdpoint'];
 	}	
 
-  $checkpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." where idprogram = '$idprogram`'" );
+  $checkpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." where idprogram = '$idprogram`'" );
   $jumlahpeserta = $GLOBALS['xoopsDB']->getRowsNum($checkpeserta);
   $checkunit= $GLOBALS['xoopsDB']->query("SELECT * from ".$GLOBALS['xoopsDB']->prefix("myhadir_unit")." WHERE idunit = '$idunit'");
   $rowx =$GLOBALS['xoopsDB']->fetchArray($checkunit);

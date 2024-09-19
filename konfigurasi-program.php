@@ -130,7 +130,7 @@ $loggedinuid = is_object($xoopsUser) ? $xoopsUser->getVar('uid') : 0;
 if (isset($_GET['del_program']))  {
 
 $GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_program")." WHERE idprogram='" . $_GET['del_program'] . "'");
-$GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram='" . $_GET['del_program'] . "'");
+$GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram='" . $_GET['del_program'] . "'");
 $GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_aksesprogram")." WHERE idprogram='" . $_GET['del_program'] . "'");
 $GLOBALS['xoopsDB']->queryF("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_log")." (idprogram,tindakan,tarikh,uid) VALUES  
 ('" . $_GET['del_program'] . "','Hapus Program',CURRENT_TIMESTAMP,'$loggedinuid')");
@@ -761,7 +761,7 @@ while($row = $GLOBALS['xoopsDB']->fetchArray($result))
 echo "<td><a id='$idprogram' name='$idprogram'></a>
 " . $row['namaprogram'] . "";
 
-$checksijil = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram=" . $row['idprogram'] . "");
+$checksijil = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram=" . $row['idprogram'] . "");
 $jumlahsijil=$GLOBALS['xoopsDB']->getRowsNum($checksijil);
 echo "<br /><br /><small><b>No Sijil:</b> myHadir/$namasingkatan/" . $row['idprogram'] . "/" . $tahunprogram . "/" . $jumlahsijil . "/";
 

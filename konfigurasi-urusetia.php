@@ -418,7 +418,7 @@ $idlokasi=$row['idlokasi'];
 echo "<tr>";
 echo "<td>$namaprogram<br>"; 
 
-$checkpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram='$idprogram'");
+$checkpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram='$idprogram'");
 $jumlahpeserta=$GLOBALS['xoopsDB']->getRowsNum($checkpeserta);
 echo "<small><strong>Jumlah Peserta: </strong>$jumlahpeserta</small>";
 

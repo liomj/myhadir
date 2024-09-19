@@ -154,7 +154,7 @@ echo "</div>";
  
  
 	
-	$resultkehadiran = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram = '$idprogram'");
+	$resultkehadiran = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram = '$idprogram'");
                 $jumlahkehadiran = $GLOBALS['xoopsDB']->getRowsNum($resultkehadiran);
 
 
@@ -162,7 +162,7 @@ echo "</div>";
  	
 	<?php
 	if (isset($_GET['del_kehadiran']))  {
-$GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE id='" . $_GET['del_kehadiran'] . "'");
+$GLOBALS['xoopsDB']->queryF("DELETE from ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE id='" . $_GET['del_kehadiran'] . "'");
 $GLOBALS['xoopsDB']->queryF("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_log")." (tindakan,tarikh,uid) VALUES  
 ('Hapus Peserta',CURRENT_TIMESTAMP,'$loggedinuid')");
 //redirect_header("kehadiran.php?id=$idprogram", 2, 'Kehadiran berjaya dihapuskan'); 
@@ -175,7 +175,7 @@ if (isset($_POST['kemaskini_kehadiran']))  {
 
 //run the query to update the data
 $curdate=date("Y-m-d");
-$updatekehadiran=$GLOBALS['xoopsDB']->query("UPDATE ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." SET 
+$updatekehadiran=$GLOBALS['xoopsDB']->query("UPDATE ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." SET 
 nama='" . test_input(($_POST['nama'])) . "',
 mykad='" . test_input(($_POST['mykad'])) . "',
 email='" . test_input(($_POST['email'])) . "',
@@ -196,7 +196,7 @@ $GLOBALS['xoopsDB']->query("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_l
 if (isset($_GET['edit_kehadiran']))  {
 
 //run the query to get the data
-  $result2 = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." where id='" .  $_GET['edit_kehadiran'] . "'" );
+  $result2 = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." where id='" .  $_GET['edit_kehadiran'] . "'" );
 $numrows = $GLOBALS['xoopsDB']->getRowsNum($result2);
 if (!$result2) { // add this check.
    trigger_error($GLOBALS['xoopsDB']->error()); 
@@ -208,7 +208,7 @@ if ($numrows > 0) {
 //display the form with the selected data
  while($row=$GLOBALS['xoopsDB']->fetchArray($result2))  
   { //do this while there's a record in the $result array
-		$id=$row['id'];
+		$idkehadiran=$row['id'];
 		$nama=$row['nama'];
 		$mykad=$row['mykad'];
 		$email=$row['email'];
@@ -218,7 +218,7 @@ if ($numrows > 0) {
 ?>
 
 <form id='set1' role='form' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id=<?php echo $idprogram ?>">
-<input type="hidden" name="id" value="<?php echo $id;?>">
+<input type="hidden" name="id" value="<?php echo $idkehadiran;?>">
 	<table class='table table-striped table-hover'>
 		<thead class='table-dark'>
                     <th colspan='2'> <b>Kemaskini Info Peserta : <?php echo $namaprogram ?></b></th>
@@ -297,11 +297,11 @@ if (isset($_POST['daftar_kehadiran']))  {
 	//$notel=$GLOBALS['xoopsDB']->escape($_POST['notel']);
 	$notel='087-212333';
 	$idunit=$GLOBALS['xoopsDB']->escape($_POST['idunit']);
-$checkic="SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram = '$idprogram' and mykad='$mykad'";
+$checkic="SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram = '$idprogram' and mykad='$mykad'";
 $result=$GLOBALS['xoopsDB']->query($checkic);
 if($GLOBALS['xoopsDB']->getRowsNum($result)==0) { 
 
-$query1 ="INSERT INTO `".$GLOBALS['xoopsDB']->prefix("myhadir_nama")."` (`id` , `idprogram` , `nama`, `mykad`,`email`,`idunit`) "; 
+$query1 ="INSERT INTO `".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")."` (`id` , `idprogram` , `nama`, `mykad`,`email`,`idunit`) "; 
 $query1 .="VALUES (NULL, '$idprogram', '$namakehadiran', '$mykad','$email', '$idunit')";
 $masuk2=$GLOBALS['xoopsDB']->query($query1);
 		//echo PHP_EOL . $query1 . PHP_EOL;
@@ -387,7 +387,7 @@ echo "</form>";
 
 
 <?php
-	$querysijil="SELECT a.id,a.idprogram,a.mykad,a.nama,a.email,a.kehadiran,a.idunit,b.idunit,b.unit FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." a,
+	$querysijil="SELECT a.id,a.idprogram,a.mykad,a.nama,a.email,a.kehadiran,a.idunit,b.idunit,b.unit FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." a,
 	".$GLOBALS['xoopsDB']->prefix("myhadir_unit")." b 
 	WHERE idprogram = '$idprogram' AND a.idunit =  b.idunit ORDER BY a.id DESC";
     //echo $query;EXIT;

@@ -117,7 +117,7 @@ $tarikh_tamat=date('d M Y',strtotime($tarikhtamat));
 		
 			
 			$query="SELECT a.id,a.mykad,a.nama,a.kehadiran,a.email,a.idunit,b.idunit,b.unit 
-			FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." a,
+			FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." a,
 			".$GLOBALS['xoopsDB']->prefix("myhadir_unit")." b WHERE idprogram = '$idprogram' AND a.idunit =  b.idunit ORDER BY a.nama ASC";
     
 			$result=$GLOBALS['xoopsDB']->query($query);

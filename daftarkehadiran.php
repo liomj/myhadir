@@ -137,7 +137,7 @@ echo "$urusetia,";
 echo "</div>";
 
 
-	$resultpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." where idprogram = '$idprogram'" );
+	$resultpeserta = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." where idprogram = '$idprogram'" );
     $jumlahpeserta = $GLOBALS['xoopsDB']->getRowsNum($resultpeserta);
 $curdate=date("Y-m-d");
                                     if($tarikhmula < $curdate OR $jumlahpeserta > $kuotapeserta)

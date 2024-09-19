@@ -87,7 +87,7 @@ $loggedinuid=$xoopsUser->getVar('uid');
                                 $mykad  = $_POST['mykad'];
                                                                               
 									 
-$getnama = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE mykad= '$loggedinuser' ORDER by id DESC"); 
+$getnama = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE mykad= '$loggedinuser' ORDER by id DESC"); 
  $rowx = $GLOBALS['xoopsDB']->fetchArray($getnama);
  $namax=$rowx['nama'];
 echo "<h2><span class='badge bg-danger'>Program</span></h2>";
@@ -97,10 +97,10 @@ $result = $GLOBALS['xoopsDB']->query("SELECT
   n.*,
   concat(
     
-    (SELECT count(*) FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram = n.idprogram), '/',
-    (SELECT count(*) FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram = n.idprogram AND id < n.id) + 1
+    (SELECT count(*) FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram = n.idprogram), '/',
+    (SELECT count(*) FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram = n.idprogram AND id < n.id) + 1
   ) nosijil 
-FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." n INNER JOIN ".$GLOBALS['xoopsDB']->prefix("myhadir_program")." p
+FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." n INNER JOIN ".$GLOBALS['xoopsDB']->prefix("myhadir_program")." p
 ON p.idprogram = n.idprogram WHERE n.mykad='$loggedinuser' ORDER BY id DESC");
 			
 			
@@ -132,11 +132,11 @@ ON p.idprogram = n.idprogram WHERE n.mykad='$loggedinuser' ORDER BY id DESC");
                                         echo "<tbody>";			
                    while($row = $GLOBALS['xoopsDB']->fetchArray($result))
 {         
-									$id=$row['id'];
+									$idkehadiran=$row['id'];
                                     $nama=$row['nama'];
 									 $mykad=$row['mykad'];
 									$idprogram=$row['idprogram'];
-									$idkategoripenerima=$row['idkategoripenerima']; 
+									$idkategorikehadiran=$row['idkategorikehadiran']; 
 									$kehadiran=$row['kehadiran'];
 									$nosijil=$row['nosijil'];
 	                               $idcpdcode=$row['idcpdcode'];	
@@ -173,7 +173,7 @@ echo "$translated_tarikhmula - $translated_tarikhtamat ";
 										echo "</td>";
 }
 										echo "<td>";
-										$checkkategoripenerima = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kategoripenerima")." WHERE idkategoripenerima='$idkategoripenerima'");
+										$checkkategoripenerima = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kategoripenerima")." WHERE idkategorikehadiran='$idkategorikehadiran'");
 $rowkategoripenerima=$GLOBALS['xoopsDB']->fetchArray($checkkategoripenerima);
 $kategoripenerima=$rowkategoripenerima['kategoripenerima'];
 echo "$kategoripenerima";
@@ -185,7 +185,7 @@ $row6 = $GLOBALS['xoopsDB']->fetchArray($checkfailtemplate);
 $failtemplate=$row6['failtemplate'];
 $tandatangan=$row6['tandatangan'];
 										
-if ($idkategoripenerima!=1)
+if ($idkategorikehadiran!=1)
 {	
 echo "<form role='form' id='print' action='$failtemplate?download_esijilpenghargaan&idpenghargaan=$id' target='_blank' method='post'>";
 
@@ -203,7 +203,7 @@ echo "<input type=\"hidden\" name=\"tempoh\" value='$tempoh'>";
 
 if ($kehadiran=='1')
 {
-if ($idkategoripenerima!=1)
+if ($idkategorikehadiran!=1)
 {	
  //echo "<a href='$failtemplate?download_esijilpenghargaan&idpenghargaan=$id' target='_blank' class='btn btn-light btn-sm text-dark'><i class='fa fa-download' title='Muat Turun E-Sijil'></i></a>&nbsp;";
 echo "<input type=\"hidden\" name=\"nosijil\" value='$nosijil'>";

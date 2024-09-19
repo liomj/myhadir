@@ -123,13 +123,13 @@ INSERT INTO `myhadir_unit` (`idunit`, `unit`) VALUES
 (64, 'Pekerja Mesra Ibadah (PMI)');
 
 
-CREATE TABLE `myhadir_nama` (
+CREATE TABLE `myhadir_kehadiran` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idprogram` int(10) NOT NULL,
   `nama` varchar(256) NOT NULL,
   `mykad` varchar(256) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `idkategoripenerima` int(11) NOT NULL,
+  `idkategorikehadiran` int(11) NOT NULL,
   `kehadiran` int(11) NOT NULL,
     PRIMARY KEY (`id`)
 )  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

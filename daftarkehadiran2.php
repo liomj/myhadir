@@ -181,11 +181,11 @@ echo "</div>";
 					$cpdpoint=$row['cpdpoint'];
 	}	
 
-$checkic="SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE id = '$id' and mykad='$mykad'";
+$checkic="SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE id = '$id' and mykad='$mykad'";
 $result=$GLOBALS['xoopsDB']->query($checkic);
 if($GLOBALS['xoopsDB']->getRowsNum($result)==0) { 
-		$GLOBALS['xoopsDB']->query("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." (nama,mykad,email,idkategoripenerima,idprogram,kehadiran,idunit) 
-VALUES  ('" . test_input($_POST['nama'])  . "','" . test_input($_POST['mykad'])  . "','" . test_input($_POST['email'])  . "','" . test_input($_POST['idkategoripenerima'])  . "','" . test_input($_POST['idprogram'])  . "',
+		$GLOBALS['xoopsDB']->query("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." (nama,mykad,email,idkategorikehadiran,idprogram,kehadiran,idunit) 
+VALUES  ('" . test_input($_POST['nama'])  . "','" . test_input($_POST['mykad'])  . "','" . test_input($_POST['email'])  . "','" . test_input($_POST['idkategorikehadiran'])  . "','" . test_input($_POST['idprogram'])  . "',
 '" . test_input($_POST['kehadiran'])  . "','" . test_input($_POST['idunit'])  . "')");		
 		$GLOBALS['xoopsDB']->query("INSERT INTO ".$GLOBALS['xoopsDB']->prefix("myhadir_log")." (idprogram,tindakan,tarikh,uid) VALUES  ('$idprogram','Daftar Program',CURRENT_TIMESTAMP,'')");
 //redirect_header("peserta.php?id=$idprogram", 2, 'Kehadiran berjaya dihapuskan'); 
@@ -206,7 +206,7 @@ else
    Terima Kasih.
 		</div>";
 ?>		
-		<br><br><a href='program.php?id=<?php echo $id; ?>' class='btn btn-primary btn-sm text-white'><i class='fa fa-arrow-left'></i> Kembali ke Program</a>
+		<br><br><a href='program.php?id=<?php echo $idkehadiran; ?>' class='btn btn-primary btn-sm text-white'><i class='fa fa-arrow-left'></i> Kembali ke Program</a>
 		
 
 

@@ -169,7 +169,7 @@ echo "$tarikh_mula - $tarikh_tamat <br><span class='badge bg-secondary'>$waktu</
 
 <br />
 <?php
-//echo $id;exit;
+//echo $idkehadiran;exit;
     //$querysijil="SELECT * FROM myhadir_peserta WHERE idprogram = '$idprogram'" ;
 	$querysijil="SELECT a.idpeserta,a.mykad,a.nama,a.regdate,a.kehadiran,a.idunit,b.idunit,b.namaunit FROM myhadir_peserta a,myhadir_unit b 
 	WHERE idprogram = '$idprogram' AND a.idunit =  b.idunit ORDER BY a.idpeserta DESC";

@@ -185,7 +185,7 @@ echo "<td>";
 $idprogram=$row['idprogram'];
 
 
-$checksijil = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_nama")." WHERE idprogram='$idprogram'");
+$checksijil = $GLOBALS['xoopsDB']->query("SELECT * FROM ".$GLOBALS['xoopsDB']->prefix("myhadir_kehadiran")." WHERE idprogram='$idprogram'");
 $jumlahsijil=$GLOBALS['xoopsDB']->getRowsNum($checksijil);
 echo $jumlahsijil;
 echo "</td>";
