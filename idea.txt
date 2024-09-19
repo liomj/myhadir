@@ -1,0 +1,38 @@
+index program hari ini/akan datang
+
+Keep It Simple
+Urusetia Daftar Program
+Generate QR Code
+Urusetia Share QR Code
+User Daftar
+Urusetia Cetak Kehadiran
+
+
+
+
+
+
+User
+Sahkan Kehadiran
+Nama
+Jawatan
+Gred
+Unit
+Hospital
+IC
+Email
+No Telefon
+Kategori
+Link dengan esijil
+Program Saya
+
+Urusetia Program
+CRUD Program
+Tambah Manual
+Print Kehadiran
+QR Code
+
+Admin
+Akses Urusetia
+Akses Admin
+Konfigurasi

@@ -1,0 +1,158 @@
+<style>
+    /* reset our lists to remove bullet points and padding */
+    .mainmenu,
+    .submenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* make ALL links (main and submenu) have padding and background color */
+    .mainmenu a {
+        display: block;
+        border-bottom: 1px solid #cccccc;
+        text-decoration: none;
+        padding: 10px;
+        color: #000;
+    }
+
+    /* add hover behaviour */
+    .mainmenu a:hover {
+        background-color: #e8f9ff;
+    }
+
+    /* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+    .mainmenu li:hover .submenu {
+        display: block;
+        max-height: 200px;
+    }
+
+    /*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+    .submenu a {
+        background-color: #ffffff;
+    }
+
+    /* hover behaviour for links inside .submenu */
+    .submenu a:hover {
+        background-color: #f7fdff;
+    }
+
+    /* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+    .submenu {
+        overflow: hidden;
+        max-height: 0;
+        -webkit-transition: all 0.5s ease-out;
+    }
+</style>
+
+<div class="menu-kiri">
+    <ul class="mainmenu">
+        <li>
+            <a href="<{$xoops_url}>" target="_self" alt="Header" title="Header"><i class=""></i> Sistem myHadir</a>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>" target="_self" alt="Muka Depan" title="Muka Depan"><i class="fa fa-home"></i> Muka Depan</a>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>" target="_self" alt="e-Sijil Saya" title="e-Sijil Saya"><i class="fa fa-certificate"></i> e-Sijil Saya <i class="fa fa-chevron-down pull-right" style="color: #e6e6e6;"></i> </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/programsaya.php" target="_self" alt="Program" title="Program"><i class=""></i> Program</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/cpsaya.php" target="_self" alt="C&P " title="C&P "><i class=""></i> C&P </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>" target="_self" alt="Cari e-Sijil" title="Cari e-Sijil"><i class="fa fa-search"></i> Cari e-Sijil <i class="fa fa-chevron-down pull-right" style="color: #e6e6e6;"></i> </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/getsijil.php" target="_self" alt="Program" title="Program"><i class=""></i> Program</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/getsijilcp.php" target="_self" alt="C & P" title="C & P"><i class=""></i> C & P</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>/modules/myhadir/program.php" target="_self" alt="Senarai e-Sijil" title="Senarai e-Sijil">
+                <i class="fa fa-coffee"></i> Senarai e-Sijil <i class="fa fa-chevron-down pull-right" style="color: #e6e6e6;"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/program.php" target="_self" alt="Program" title="Program"><i class=""></i> Program</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/cp.php" target="_self" alt="C&P" title="C&P"><i class=""></i> C&P</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>" target="_self" alt="Konfigurasi Sistem" title="Konfigurasi Sistem"><i class="fa fa-cog"></i> Konfigurasi Sistem <i class="fa fa-chevron-down pull-right" style="color: #e6e6e6;"></i> </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-program.php" target="_self" alt="Program" title="Program"><i class=""></i> Program</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-cp.php" target="_self" alt="Credentialing & Privileging" title="Credentialing & Privileging"><i class=""></i> Credentialing & Privileging</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-kategori.php" target="_self" alt="Kategori Penerima" title="Kategori Penerima"><i class=""></i> Kategori Penerima</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-jenissijil.php" target="_self" alt="Template" title="Template"><i class=""></i> Template</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-lokasi.php" target="_self" alt="Lokasi" title="Lokasi"><i class=""></i> Lokasi</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-penganjur.php" target="_self" alt="Penganjur" title="Penganjur"><i class=""></i> Penganjur</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-cpdpoint.php" target="_self" alt="CPD Point" title="CPD Point"><i class=""></i> CPD Point</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-cpdpointcategory.php" target="_self" alt="CPD Point Category" title="CPD Point Category"><i class=""></i> CPD Point Category</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-cpprocedures.php" target="_self" alt="C&P Procedures" title="C&P Procedures"><i class=""></i> C&P Procedures</a>
+                </li>
+
+                <li>
+                    <a href="<{$xoops_url}>/modules/myhadir/konfigurasi-umum.php" target="_self" alt="Umum" title="Umum"><i class=""></i> Umum</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="<{$xoops_url}>/modules/myhadir/log.php" target="_self" alt="Audit Trail" title="Audit Trail"><i class="fa fa-history"></i> Audit Trail</a>
+        </li>
+    </ul>
+</div>
