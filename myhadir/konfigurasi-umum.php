@@ -119,20 +119,14 @@ echo "</th><td><input type='text' class='form-control' name='emailrasmi' value='
     <label class='form-label' for='apppassword'><strong>App Password:</strong></label>";
 echo "</th><td><input type='text' class='form-control' name='apppassword' value='$apppassword'/>";
  echo "</div>";
-
- echo "<div class='mb-3'>
-    <label class='form-label' for='urusetiagroupid'><strong>Group ID Urusetia Program:</strong></label>";
-echo "</th><td><input type='text' class='form-control' name='urusetiagroupid' value='$urusetiagroupid'/>";
- echo "</div>";
  
-      echo "<div class='mb-3'>
-    <label class='form-label' for='urusetiacpgroupid'><strong>Group ID Urusetia C&P:</strong></label>";
-echo "</th><td><input type='text' class='form-control' name='urusetiacpgroupid' value='$urusetiacpgroupid'/>";
- echo "</div>";
- 
-       echo "<div class='mb-3'>
-    <label class='form-label' for='admingroupid'><strong>Group ID Admin myHadir:</strong></label>";
+  echo "<div class='mb-3'>
+    <label class='form-label' for='admingroupid'><strong>XOOPS Group ID Admin myHadir:</strong></label>";
 echo "</th><td><input type='text' class='form-control' name='admingroupid' value='$admingroupid'/>";
+ echo "</div>";
+ echo "<div class='mb-3'>
+    <label class='form-label' for='urusetiagroupid'><strong>XOOPS Group ID Urusetia Program:</strong></label>";
+echo "</th><td><input type='text' class='form-control' name='urusetiagroupid' value='$urusetiagroupid'/>";
  echo "</div>";
  
 echo "<input type='hidden' name='id' value='$id'>";
@@ -229,9 +223,8 @@ echo "<tr><th>No Telefon`</th><td>" . $row['notelefon'] . "</td></tr>";
 echo "<tr><th>Laman Web</th><td>" . $row['lamanweb'] . "</td></tr>";
 echo "<tr><th>Email Rasmi</th><td>" . $row['emailrasmi'] . "</td></tr>";
 echo "<tr><th>App Password<br><small>https://myaccount.google.com/apppasswords</small></th><td>" . $row['apppassword'] . "</td></tr>";
-echo "<tr><th>Group ID admin</th><td>" . $row['admingroupid'] . "</td></tr>";
-echo "<tr><th>Group ID Urusetia </th><td>" . $row['urusetiagroupid'] . "</td></tr>";
-echo "<tr><th>Group ID Urusetia C&P</th><td>" . $row['urusetiacpgroupid'] . "</td></tr>";
+echo "<tr><th>XOOPS GroupID Admin</th><td>" . $row['admingroupid'] . "</td></tr>";
+echo "<tr><th>XOOPS GroupID Urusetia </th><td>" . $row['urusetiagroupid'] . "</td></tr>";
 
 
 global $xoopsUser;

@@ -18,15 +18,16 @@ $modversion['onUninstall']= "include/onuninstall.php";
 
 // Mysql file
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
+$modversion['tables'][0] = "myhadir_aksesadmin";
 $modversion['tables'][1] = "myhadir_aksesprogram";
-$modversion['tables'][2] = "myhadir_kategoripenerima";
-$modversion['tables'][3] = "myhadir_konfigurasiumum";
-$modversion['tables'][4] = "myhadir_log";
-$modversion['tables'][5] = "myhadir_lokasi";
-$modversion['tables'][6] = "myhadir_kehadiran";
-$modversion['tables'][7] = "myhadir_penganjur";
-$modversion['tables'][8] = "myhadir_program";
-$modversion['tables'][9] = "myhadir_aksesadmin";
+$modversion['tables'][2] = "myhadir_kategorikehadiran";
+$modversion['tables'][3] = "myhadir_kehadiran";
+$modversion['tables'][4] = "myhadir_konfigurasiumum";
+$modversion['tables'][5] = "myhadir_log";
+$modversion['tables'][6] = "myhadir_lokasi";
+$modversion['tables'][7] = "myhadir_organisasi";
+$modversion['tables'][8] = "myhadir_penganjur";
+$modversion['tables'][9] = "myhadir_program";
 $modversion['tables'][10] = "myhadir_unit";
 
 // Blocks
