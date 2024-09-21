@@ -25,6 +25,10 @@ $xoopsTpl->assign( 'xoops_showlblock', 1); //set to 0 to hide left blocks
 $xoopsTpl->assign( 'xoops_showrblock', 1); //set to 0 to hide right blocks
 $xoopsTpl->assign( 'xoops_showcblock', 1); //set to 0 to hide center blocks
 
+$monthsDaysEn = array('January','February','March','April','May','June','July','August','September','October','November','December'); //populate with all months/days you want translated
+$monthsDaysMy = array('Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'); //populate with all months/days you want translated
+
+
 ?>
 
 <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"/>

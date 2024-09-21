@@ -33,6 +33,9 @@ $xoopsUser->isAdmin() or redirect_header('index.php', 3, _NOPERM);
   $data = htmlspecialchars($data);
   return $data;
 }
+$monthsDaysEn = array('January','February','March','April','May','June','July','August','September','October','November','December'); //populate with all months/days you want translated
+$monthsDaysMy = array('Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'); //populate with all months/days you want translated
+
 
 ?>
 
